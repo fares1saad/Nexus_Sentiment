@@ -206,7 +206,7 @@ def predict_DP():
 
             if prediction > 1:
                 # If either model predicts 1, return a response indicating an issue
-                return jsonify({'prediction': 'Depression detected'})
+                return jsonify({'prediction': 'Depression'})
             
             return jsonify({'prediction': 'Negative'})
 
