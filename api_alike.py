@@ -52,8 +52,7 @@ def textblob_sentiment(text):
 
 def depForm(request_data):
     # intialize needed variables
-    score += int(request_data.get('sum', ''))
-
+    score = int(request_data.get('sum', ''))
     return 1 if score > 20 else 0
 
 sia = SentimentIntensityAnalyzer()
