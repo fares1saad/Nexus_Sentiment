@@ -202,7 +202,7 @@ def predict_DP():
             # Predict using Decision Tree
             dt_prediction = dt_dp.predict(example_counts)
 
-            prediction = dt_prediction[0]+lgr_prediction[0]+svc_prediction[0]
+            prediction = dt_prediction[0]+lgr_prediction[0]+dt_prediction[0]
 
             if prediction > 1:
                 # If either model predicts 1, return a response indicating an issue
