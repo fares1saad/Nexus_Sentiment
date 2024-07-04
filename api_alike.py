@@ -18,6 +18,7 @@ from celery import Celery
 import time
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from textblob import TextBlob
 nltk.download('vader_lexicon')
 
 def preprocess(data):
@@ -43,17 +44,17 @@ def preprocess(data):
     
     return processed_text
 
+def textblob_sentiment(text):
+    blob = TextBlob(text)
+    polarity = blob.sentiment.polarity
+    # Return 0 for positive sentiment, 1 for negative sentiment
+    return 0 if polarity > 0 else 1
+
 def depForm(request_data):
     # intialize needed variables
-    pos_score = 0
-    neg_score = 0
-    neg_score += int(request_data.get('always', ''))
-    neg_score += int(request_data.get('usually', ''))*.67
-    neg_score += int(request_data.get('sometimes', ''))*.33
-    pos_score += int(request_data.get('never', ''))
+    score += int(request_data.get('sum', ''))
 
-    return 1 if neg_score > pos_score else 0
-
+    return 1 if score > 20 else 0
 
 sia = SentimentIntensityAnalyzer()
 
@@ -122,11 +123,6 @@ with open('models/dp_model_dt.pkl', 'rb') as model_file:
 with open('models/dp_vectorizer.pkl', 'rb') as vectorizer_file:
     vectorizer_dp = pickle.load(vectorizer_file)
 
-# with open('models/dp_vectorizer.pkl', 'rb') as vectorizer_file:
-#     roberta = pickle.load(open('models/roberta_sentiment_model.pkl', 'rb'))
-
-# with open('models/dp_vectorizer.pkl', 'rb') as vectorizer_file:
-#     vader = pickle.load(open('models/vader_sentiment_model.pkl', 'rb'))
 
 
 @app.route('/hello')
@@ -184,9 +180,10 @@ def predict_DP():
 
         count=0
         count+=vadar_sentiment(text)
+        count+=textblob_sentiment(text)
         count+=depForm(request_data)
 
-        if(count>0) :
+        if(count>1) :
 
             # Your existing preprocessing code
             a = preprocess(text)
@@ -202,7 +199,7 @@ def predict_DP():
             # Predict using Decision Tree
             dt_prediction = dt_dp.predict(example_counts)
 
-            prediction = dt_prediction[0]+lgr_prediction[0]+dt_prediction[0]
+            prediction = dt_prediction[0]+lgr_prediction[0]+svc_prediction[0]
 
             if prediction > 1:
                 # If either model predicts 1, return a response indicating an issue
