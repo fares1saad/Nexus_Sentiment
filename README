@@ -29,7 +29,6 @@ The system includes **two main models**, each serving a different purpose within
   * Overall sentiment of user-generated posts  
 * Helps maintain a **safe and supportive environment** for users
 
-![Hate Speech & Forum Sentiment Analysis](image.png)
 
 ---
 
@@ -52,9 +51,6 @@ The final depression assessment result is produced using **Decision-Level Fusion
 
 This fusion approach improves **robustness and reliability** of the final prediction.
 
-![Depression Model 1](image-1.png)
-![Depression Model 2](image-2.png)
-![Depression Model 3](image-3.png)
 
 ---
 
