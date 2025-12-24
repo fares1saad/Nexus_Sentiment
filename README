@@ -1,16 +1,18 @@
 # Sentiment Analysis Flask Application for Nexus Platform
 
-> This repository contains a **Flask-based Sentiment Analysis API** developed for the **Nexus mental health platform**. Nexus is a web application that enables users to interact through social forums, complete mental health assessments, and book appointments with mental health professionals. The platform also provides a dedicated space for doctors, where they can be booked by users, view forum discussions, and offer professional advice.
+> This repository contains a **Flask-based Sentiment Analysis API** developed for the **Nexus mental health platform**.  
+> Nexus is a web application that enables users to interact through social forums, complete mental health assessments, and book appointments with mental health professionals.  
+> The platform also provides a dedicated space for doctors, where they can be booked by users, view forum discussions, and offer professional advice.
 
-
-🔗 **Nexus Platform Repository**
+🔗 **Nexus Platform Repository**  
 [https://github.com/AlaaEbrahim0/mental-mediator-api-graduation-project](https://github.com/AlaaEbrahim0/mental-mediator-api-graduation-project)
 
 ---
 
 ## Project Overview
 
-The API provides **sentiment and mental health analysis models** that are integrated into the Nexus website. These models support content moderation, emotional understanding, and mental health assessment through machine learning–based sentiment analysis.
+The API provides **sentiment and mental health analysis models** that are integrated into the Nexus website.  
+These models support content moderation, emotional understanding, and mental health assessment through machine learning–based sentiment analysis.
 
 The system includes **two main models**, each serving a different purpose within the platform.
 
@@ -20,34 +22,25 @@ The system includes **two main models**, each serving a different purpose within
 
 ### 1. Hate Speech & Forum Sentiment Analysis Model
 
-* Used in **Nexus social forums**
+* Used in **Nexus social forums**  
 * Detects:
-
   * Hate speech
   * Toxic or harmful language
-  * Overall sentiment of user-generated posts
+  * Overall sentiment of user-generated posts  
 * Helps maintain a **safe and supportive environment** for users
 
-![alt text](image.png)
+![Hate Speech & Forum Sentiment Analysis](image.png)
 
 ---
 
 ### 2. Depression Sentiment Analysis Model
 
-This model is used in the **depression assessment feature** on the Nexus website.
+This model is used in the **depression assessment feature** on the Nexus website.  
 The assessment is divided into **three components**:
 
-1. **Beck’s Depression Inventory (BDI)**
-
-   * Standard psychological questionnaire for depression assessment
-
-2. **General Sentiment Analysis**
-
-   * Classifies user input into **positive** or **negative** sentiment
-
-3. **Custom Depression Detection Model**
-
-   * A machine learning model specifically trained to detect depression-related linguistic patterns
+1. **Beck’s Depression Inventory (BDI)** – Standard psychological questionnaire for depression assessment  
+2. **General Sentiment Analysis** – Classifies user input into **positive** or **negative** sentiment  
+3. **Custom Depression Detection Model** – Machine learning model specifically trained to detect depression-related linguistic patterns  
 
 #### Decision-Level Fusion
 
@@ -59,9 +52,10 @@ The final depression assessment result is produced using **Decision-Level Fusion
 
 This fusion approach improves **robustness and reliability** of the final prediction.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![Depression Model 1](image-1.png)
+![Depression Model 2](image-2.png)
+![Depression Model 3](image-3.png)
+
 ---
 
 ## System Architecture
@@ -71,7 +65,7 @@ This fusion approach improves **robustness and reliability** of the final predic
 * Decision-Level Fusion for mental health prediction
 * Deployed as a backend service for the Nexus platform
 
-*(Architecture diagram or screenshots can be added here)*
+*(Add architecture diagram or screenshots here if needed)*
 
 ---
 
@@ -88,7 +82,7 @@ This fusion approach improves **robustness and reliability** of the final predic
 ```bash
 git clone <repository-url>
 cd <repository-name>
-```
+````
 
 2. Install the required dependencies:
 
@@ -113,6 +107,4 @@ pip install -r requirements.txt
 For any inquiries, feedback, or collaboration opportunities, feel free to contact:
 
 📧 **Fares Saad**
-Email: [faresaad74@gmail.com](mailto:faresaad74@gmail.com) 
-
-
+Email: [faresaad74@gmail.com](mailto:faresaad74@gmail.com)
