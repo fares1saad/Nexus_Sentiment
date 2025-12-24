@@ -28,7 +28,7 @@ The system includes **two main models**, each serving a different purpose within
   * Overall sentiment of user-generated posts
 * Helps maintain a **safe and supportive environment** for users
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ---
 
@@ -59,9 +59,9 @@ The final depression assessment result is produced using **Decision-Level Fusion
 
 This fusion approach improves **robustness and reliability** of the final prediction.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](images/image-1.png)
+![alt text](images/image-2.png)
+![alt text](images/image-3.png)
 ---
 
 ## System Architecture
